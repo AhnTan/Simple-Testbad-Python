@@ -1,15 +1,12 @@
-# 워크로드 발행자 위에 쉘
-# 쉘에서 컨트롤 에프6 이 종료
-# 스크립트에서 에프5가 시작
 import paho.mqtt.client as mqtt
 import time
 
 # set broker ip address
-ip = "192.168.0.8"
+ip = "192.168.50.5"
 #ip = "192.168.0.53"
 #ip = "192.168.0.23"
 # set client number
-num = 180
+num = 150
 # client array
 client = []
 # set topic
@@ -23,7 +20,7 @@ for i in range(0, num):
 
 print("All publishers connected. \n")
 
-for j in range(0, 10):
+for j in range(0, 999999):
     for i in range(0, num):
         client[i].publish(topic,"N" , qos = 1)
     total = total + num
