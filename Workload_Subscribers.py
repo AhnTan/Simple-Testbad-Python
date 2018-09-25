@@ -14,7 +14,8 @@ total = 0
 def on_message(client, userdata, message):
     global total
     total = total + 1
-    #print(str(message.payload))
+    if(str(message.payload) == str("normal message") or str(message.payload) == str("urgent message")):
+    	print(str(message.payload))
     if total % 180 == 0:
         print("Total Message recv Broker #" + str(int(total/180)) + " : " + str(total) + " \n")
     
